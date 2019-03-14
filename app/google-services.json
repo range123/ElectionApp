@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "838573771178",
+    "firebase_url": "https://electionapp-db3b7.firebaseio.com",
+    "project_id": "electionapp-db3b7",
+    "storage_bucket": "electionapp-db3b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838573771178:android:12ec36f1792b923b",
+        "android_client_info": {
+          "package_name": "com.range.electionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838573771178-u2dkj4e61a6bvjvdb9j15itokteoa9uu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.range.electionapp",
+            "certificate_hash": "78fd62ccc86771ecb9fce293e36d712225b45893"
+          }
+        },
+        {
+          "client_id": "838573771178-svh01ehc3aa4p0auacmjsl4uv0gm6ev3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlEyaOuiHYwOvXrUNlMhFv7dkQEYB1tRk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838573771178-svh01ehc3aa4p0auacmjsl4uv0gm6ev3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

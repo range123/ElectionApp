@@ -1,32 +1,24 @@
 package com.range.electionapp;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.KeyEvent;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.Acgit tionBarDrawerToggle;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
 public class FirstActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    MediaRecorder mediaRecorder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_2_TS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -91,9 +83,10 @@ public class FirstActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
 
-            startActivity(new Intent(getApplicationContext(),VoteActivity.class));
+
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            startActivity(new Intent(getApplicationContext(),VoteActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -111,56 +104,8 @@ public class FirstActivity extends AppCompatActivity
     }
     //Declaring Some Request variables here************************
 
-    private static final String LOG_TAG = "AudioRecordTest";
-    private static final int REQUEST_RECORD_AUDIO_PERMISSION = 200;
-    private static String fileName = null;
 
 
-    // Requesting permission to RECORD_AUDIO
-    private boolean permissionToRecordAccepted = false;
-    private String [] permissions = {Manifest.permission.RECORD_AUDIO};
-    //********************************************
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode){
-            case REQUEST_RECORD_AUDIO_PERMISSION:
-                permissionToRecordAccepted  = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                break;
-        }
-        if (!permissionToRecordAccepted ) finish();
-
-    }
-
-    int counter=0;
-
-    long gap=0;
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        counter++;
-
-        if(counter==2 && (System.currentTimeMillis()-gap)<1000)
-        {
-            if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)){
 
 
-                mediaRecorder.start();
-                Toast.makeText(this, "I Love You", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        if(counter==4 && (System.currentTimeMillis()-gap)<0.5)
-        {
-            if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)){
-
-                mediaRecorder.stop();
-                Toast.makeText(this, "I Hate You", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-
-        gap=System.currentTimeMillis();
-        Toast.makeText(this,"Gap : "+( System.currentTimeMillis()-gap), Toast.LENGTH_SHORT).show();
-        return true;
-    }
 }

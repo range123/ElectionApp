@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,8 @@ public class VoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote);
-
+        players = new ArrayList<>();
+        Toast.makeText(this, "Vote activity", Toast.LENGTH_SHORT).show();
         RecyclerView rv = findViewById(R.id.recycler);
 
 

@@ -75,6 +75,7 @@ public class FacedetectActivity extends AppCompatActivity {
                     if(x.value()>0.6) {
                         Toast.makeText(FacedetectActivity.this, "Authenticated" + x.value(), Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),FaceExpressionActivity.class));
+                        finish();
                     }
                     else
                         Toast.makeText(FacedetectActivity.this, "You aren't Gokul" + x.value(), Toast.LENGTH_SHORT).show();

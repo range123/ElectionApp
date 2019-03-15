@@ -44,6 +44,7 @@ public class FaceExpressionActivity extends AppCompatActivity {
             if(f.getIsLeftEyeOpenProbability()>0) {
                 Toast.makeText(this, "Smiling " + f.getIsSmilingProbability(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),FirstActivity.class));
+                finish();
             }
             else
                 Toast.makeText(this, "Nope "+f.getIsSmilingProbability(), Toast.LENGTH_SHORT).show();

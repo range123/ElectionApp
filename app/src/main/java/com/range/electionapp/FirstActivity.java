@@ -1,6 +1,7 @@
 package com.range.electionapp;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -89,6 +90,8 @@ public class FirstActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+
+            startActivity(new Intent(getApplicationContext(),VoteActivity.class));
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -157,6 +160,7 @@ public class FirstActivity extends AppCompatActivity
 
 
         gap=System.currentTimeMillis();
+        Toast.makeText(this,"Gap : "+( System.currentTimeMillis()-gap), Toast.LENGTH_SHORT).show();
         return true;
     }
 }

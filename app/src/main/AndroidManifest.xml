@@ -17,8 +17,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".VoteActivity"></activity>
         <activity android:name=".FaceExpressionActivity"></activity>
+=======
+
+        <activity android:name=".VoteActivity"></activity>
+
+        <activity android:name=".FaceExpressionActivity"></activity>
+
+>>>>>>> 89290ddbd98aaa076fd4d3035bec3bb2130a29b3
         <activity android:name=".FacedetectActivity" />
         <activity
             android:name=".FirstActivity"
@@ -36,5 +44,4 @@
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="face" />
     </application>
-
 </manifest>

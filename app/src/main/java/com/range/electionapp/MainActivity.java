@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 Users u = new Users(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid(), FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 df.setValue(u);
 
-                Intent i = new Intent(getApplicationContext(), first_Activity.class);
-                startActivity(i);
-                finish();
             } else
                 Toast.makeText(this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();
         }

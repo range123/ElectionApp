@@ -4,8 +4,12 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
+=======
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+>>>>>>> ca0438f0701161635f62754a6eb9632c38fa3d6d
 
     <application
         android:allowBackup="true"

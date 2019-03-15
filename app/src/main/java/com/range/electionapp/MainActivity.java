@@ -3,6 +3,7 @@ package com.range.electionapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -54,4 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         .build(),
                 RC_SIGN_IN);
     }
-}
+
+
+
+}//eclass

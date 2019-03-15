@@ -13,9 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 
-import clarifai2.api.ClarifaiBuilder;
 import clarifai2.api.ClarifaiClient;
-import okhttp3.OkHttpClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference df = FirebaseDatabase.getInstance().getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
                 Users u = new Users(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid(), FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 df.setValue(u);
+                startActivity(new Intent(getApplicationContext(),FacedetectActivity.class));
+                finish();
+
 
             } else
                 Toast.makeText(this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();

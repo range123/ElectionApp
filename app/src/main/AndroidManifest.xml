@@ -17,7 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".VoteActivity"></activity>
+=======
+        <activity android:name=".FaceExpressionActivity"></activity>
+>>>>>>> 7ffdcba35cbe240da84c335bcebc6de983207036
         <activity android:name=".FacedetectActivity" />
         <activity
             android:name=".FirstActivity"

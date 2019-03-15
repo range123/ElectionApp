@@ -72,8 +72,10 @@ public class FacedetectActivity extends AppCompatActivity {
                 List<Concept> concepts = predictions.get(0).data();
                 for(Concept x:concepts)
                 {
-                    if(x.value()>0)
+                    if(x.value()>0.6) {
                         Toast.makeText(FacedetectActivity.this, "Authenticated" + x.value(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),FaceExpressionActivity.class));
+                    }
                     else
                         Toast.makeText(FacedetectActivity.this, "You aren't Gokul" + x.value(), Toast.LENGTH_SHORT).show();
                 }

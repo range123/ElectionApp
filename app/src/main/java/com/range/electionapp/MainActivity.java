@@ -14,6 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 
+import clarifai2.api.ClarifaiClient;
+
 public class MainActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient fusedLocationClient;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     get constituency using location
     */
     final private static int RC_SIGN_IN = 123;
+    ClarifaiClient client;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -31,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference df = FirebaseDatabase.getInstance().getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
                 Users u = new Users(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid(), FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 df.setValue(u);
+                startActivity(new Intent(getApplicationContext(),FacedetectActivity.class));
+                finish();
+
 
             } else
                 Toast.makeText(this, "SIGN IN FAILED", Toast.LENGTH_SHORT).show();
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        "68de716e1f144b19a68167785444ecce"
+
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()

@@ -19,11 +19,14 @@ public class FaceExpressionActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     Bitmap imageBitmap;
     FaceDetector detector;
+    String vid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_face_expression);
+        vid = getIntent().getStringExtra("vid");
         image = findViewById(R.id.img);
+        Toast.makeText(this, "Smile!", Toast.LENGTH_LONG).show();
          detector = new FaceDetector.Builder(getApplicationContext())
                                         .setTrackingEnabled(false)
                                         .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
@@ -43,7 +46,7 @@ public class FaceExpressionActivity extends AppCompatActivity {
             //Log.d("Values",f.getIsLeftEyeOpenProbability()+" "+f.getIsRightEyeOpenProbability() + " "+f.getWidth());
             if(f.getIsLeftEyeOpenProbability()>0) {
                 Toast.makeText(this, "Smiling " + f.getIsSmilingProbability(), Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),FirstActivity.class));
+                startActivity(new Intent(getApplicationContext(),FirstActivity.class).putExtra("vid",vid));
                 finish();
             }
             else

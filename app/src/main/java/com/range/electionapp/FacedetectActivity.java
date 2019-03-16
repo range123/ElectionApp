@@ -29,6 +29,7 @@ public class FacedetectActivity extends AppCompatActivity {
     ImageView iv ;
     Bitmap imageBitmap;
     ProgressBar pb;
+    String vid;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -72,13 +73,13 @@ public class FacedetectActivity extends AppCompatActivity {
                 List<Concept> concepts = predictions.get(0).data();
                 for(Concept x:concepts)
                 {
-                    if(x.value()>0.6) {
+                    if(x.value()>0.6 && (x.name().equals("Gokul") && vid.equals("123")||(x.name().equals("Ehtesham")) && vid.equals("456"))) {
                         Toast.makeText(FacedetectActivity.this, "Authenticated" + x.value(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),FaceExpressionActivity.class));
+                        startActivity(new Intent(getApplicationContext(),FaceExpressionActivity.class).putExtra("vid",vid));
                         finish();
                     }
                     else
-                        Toast.makeText(FacedetectActivity.this, "You aren't Gokul" + x.value(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FacedetectActivity.this, "You aren't Authenticated" + x.value(), Toast.LENGTH_SHORT).show();
                 }
             }
         }.execute();
@@ -107,6 +108,8 @@ public class FacedetectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facedetect);
+        Intent i = getIntent();
+        vid = i.getStringExtra("vid");
         pb = findViewById(R.id.progress_bar);
         iv = findViewById(R.id.imgview);
         client = new ClarifaiBuilder("68de716e1f144b19a68167785444ecce").client(new OkHttpClient()).buildSync();

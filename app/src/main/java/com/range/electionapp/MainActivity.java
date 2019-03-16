@@ -3,7 +3,6 @@ package com.range.electionapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference df = FirebaseDatabase.getInstance().getReference("Users/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
                 Users u = new Users(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid(), FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 df.setValue(u);
-                startActivity(new Intent(getApplicationContext(),FacedetectActivity.class));
+                startActivity(new Intent(getApplicationContext(),VoteridActivity.class));
                 finish();
 
 

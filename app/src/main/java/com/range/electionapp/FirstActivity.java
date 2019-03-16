@@ -17,12 +17,15 @@ import android.view.View;
 public class FirstActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    String vid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        vid = getIntent().getStringExtra("vid");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +89,8 @@ public class FirstActivity extends AppCompatActivity
 
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            startActivity(new Intent(getApplicationContext(),VoteActivity.class));
+
+            startActivity(new Intent(getApplicationContext(),VoteActivity.class).putExtra("vid",vid));
 
         } else if (id == R.id.nav_slideshow) {
 

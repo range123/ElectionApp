@@ -58,7 +58,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
             cname=itemView.findViewById(R.id.candidate_name);
             age=itemView.findViewById(R.id.age);
             pname= itemView.findViewById(R.id.party_name);
-            desc=itemView.findViewById(R.id.desc);
+
             imgV=itemView.findViewById(R.id.logo);
 
 

@@ -13,11 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class FirstActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     String vid;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,13 @@ public class FirstActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        TextView uname = findViewById(R.id.uname);
+        uname.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+
+        TextView email = findViewById(R.id.email);
+        email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+        TextView vidt = findViewById(R.id.vid);
+        vidt.setText(vid);
     }
 
     @Override
@@ -106,7 +118,6 @@ public class FirstActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    //Declaring Some Request variables here************************
 
 
 

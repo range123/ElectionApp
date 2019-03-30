@@ -59,9 +59,9 @@ public class VoteActivity extends AppCompatActivity {
 
 
         Candidate a=new Candidate("Ehtesham","BJP",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
-        Candidate b=new Candidate("Ehtesham","BJP",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
-        Candidate c=new Candidate("Ehtesham","BJP",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
-        Candidate d=new Candidate("Ehtesham","BJP",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
+        Candidate b=new Candidate("Jayaraman","Congress",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
+        Candidate c=new Candidate("Harish","AIADMK",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
+        Candidate d=new Candidate("Gokul","DMK",50,"I promise to bring electricity",R.drawable.ic_launcher_background);
         players.add(a);
         players.add(b);
         players.add(c);
